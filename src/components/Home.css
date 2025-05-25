@@ -1,0 +1,142 @@
+.home {
+  width: 100%;
+  min-height: 800px;
+  background-color: #0e2741;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 5vw;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+}
+
+/* Left Section */
+.homeleft {
+  width: 50%;
+  min-height: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.homeleft img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Headings */
+.homeleft .heading {
+  font-size: 5vw;
+  color: white;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.homeleft .heading .line2 {
+  align-self: flex-start;
+}
+
+/* Paragraph */
+.homeleft p {
+  color: white;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 10px 0 20px 0;
+}
+
+.homeleft p .line3 {
+  display: block;
+  margin-left: 0;
+}
+
+/* Right Section */
+.homeright {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+  }
+
+  .homeleft, .homeright {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .homeleft img {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 1rem;
+  }
+
+  .homeleft .heading {
+    align-items: center;
+  }
+
+  .homeleft .heading .line2 {
+    align-self: center;
+  }
+
+  .homeleft p {
+    text-align: center;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .home {
+    min-height: auto;
+    padding: 2rem 1rem;
+    flex-direction: column;
+  }
+
+  .homeleft, .homeright {
+    width: 100%;
+    padding: 1rem 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .homeleft img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 1rem;
+  }
+
+  .homeleft .heading {
+    font-size: 7vw;
+    align-items: center;
+  }
+
+  .homeleft .heading .line2 {
+    align-self: center;
+  }
+
+  .homeleft p {
+    font-size: 14px;
+    text-align: center;
+  }
+}

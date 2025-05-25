@@ -1,0 +1,194 @@
+.about-container {
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Optional */
+  flex-wrap: wrap;
+  background-color: #0E2741;
+  color: white;
+  padding: 3rem 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-left {
+  flex: 1 1 400px;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: visible; /* Allow overflow so scaling works */
+  position: relative;
+  z-index: 1;
+}
+
+.about-left img.about-image {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+  margin-left: -10px;
+}
+
+  
+  .about-left:hover img.about-image {
+    transform: scale(1.1);
+    object-fit: cover;
+  }
+
+  .fade-in{
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+  }
+  
+  .about-right {
+    flex: 2 1 500px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+  }
+  
+  .about-right h1 {
+    margin-bottom: 1rem;
+    font-size: 3.2rem;
+    border-bottom: 3px solid white;
+    padding-bottom: 0.6rem;
+    max-width: fit-content;
+    letter-spacing: 1.2px;
+  }
+  
+  .about-right p {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-align: justify;
+    font-size: 1.1rem;
+    color: #ddd;
+  }
+  
+  .contact-btn {
+    background-color: #2565AE;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+    margin-bottom: 2.5rem;
+    align-self: flex-start;
+  }
+  
+  .contact-btn:hover {
+    background-color: #184b7d;
+  }
+  
+  /* FAQ styles */
+  .faq-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1.5px solid white;
+    padding-bottom: 0.4rem;
+    letter-spacing: 1px;
+  }
+  
+  .faq-item {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    margin-left: -20px;
+    border-left: 3px solid transparent;
+    padding-left: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-item h3 {
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    user-select: none;
+    position: relative;
+    padding-right: 1.5rem;
+  }
+  
+  .faq-item h3::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.4rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-item.active {
+    border-left: 3px solid #2565AE;
+    color: #2565AE;
+  }
+  
+  .faq-item.active h3::after {
+    content: '-';
+    transform: rotate(180deg);
+  }
+  
+  .faq-item .answer {
+    max-height: 0;
+    overflow: hidden;
+    color: #bbb;
+    transition: max-height 0.35s ease;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-left: 0.5rem;
+  }
+  
+  .faq-item.active .answer {
+    max-height: 200px; /* enough height to show the answer */
+    margin-top: 0.3rem;
+  }
+  
+  /* Animations for fade-in */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  .delay {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      padding: 1.5rem 1rem;
+      align-items: center;
+    }
+  
+    .about-left {
+      max-width: 200px;
+      margin: 0 auto 2rem;
+    }
+  
+    .about-left img.about-image {
+      width: 300px;
+      height: 300px;
+      margin-top: 150px;
+    }
+  
+    .about-right {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .contact-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  

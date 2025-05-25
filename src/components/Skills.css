@@ -1,0 +1,120 @@
+.skills-section {
+    background-color: #0E2741;
+    color: white;
+    padding: 3rem 2rem;
+    min-height: 80vh;
+  }
+  
+  .skills-section h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    margin-top: 100px;
+  }
+  
+  .skills-container {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  
+  .skills-list {
+    flex: 1 1 200px;
+    max-width: 300px;
+  }
+  
+  .skill-item {
+    cursor: pointer;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #13487e;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+    position: relative;
+  }
+  
+  .skill-item:hover,
+  .skill-item.active {
+    background-color: #1c6fb8;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #08305e;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+  
+  .progress {
+    height: 100%;
+    background: #4bb3f0;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+  
+  .skill-details {
+    flex: 2 1 400px;
+    background: #13487e;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 15px #4bb3f0;
+  
+    /* Initially hidden and shifted left */
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .skill-details.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .skill-details img {
+    max-width: 150px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #3e81c6;
+    transition: transform 0.4s ease;
+  }
+  
+  .skill-details img:hover {
+    transform: scale(1.1);
+  }
+  
+  .skill-details h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .progress-bar.large {
+    height: 15px;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .skills-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .skills-list,
+    .skill-details {
+      max-width: 100%;
+    }
+    .skill-details img {
+      max-width: 100px;
+    }
+  }
+  

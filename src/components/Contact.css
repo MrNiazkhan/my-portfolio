@@ -1,0 +1,131 @@
+.contact-wrapper {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .contact-wrapper.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .contact-container {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .contact-heading {
+    text-align: center;
+    font-size: 2.7rem;
+    color: #2565ae;
+    margin-bottom: 40px;
+  }
+  
+  .contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  
+  .contact-form,
+  .contact-info {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .contact-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #2565ae;
+    box-shadow: 0 0 5px rgba(37, 101, 174, 0.2);
+  }
+  
+  .contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .contact-form button {
+    background-color: #2565ae;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #1d4f8e;
+  }
+  
+  .success-message {
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+  }
+  
+  .contact-info {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .contact-info h3 {
+    font-size: 1.5rem;
+    color: #2565ae;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info p {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .contact-info strong {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .contact-map {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  @media (max-width: 768px) {
+    .contact-content {
+      flex-direction: column;
+    }
+  }
+  
