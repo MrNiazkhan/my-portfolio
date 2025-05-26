@@ -120,9 +120,21 @@
     color: #fff;
   }
   
-  .facebook {
+  .facebook-btn {
     background-color: #3b5998;
-    color: #fff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 78px;
+  }
+  .facebook-btn:hover {
+    background-color: #2d4373;
   }
   
   .signup-text {
