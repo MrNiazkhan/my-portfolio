@@ -1,10 +1,9 @@
-// src/Login.jsx
 import React, { useState, useContext } from 'react';
-import { FaGoogle, FaFacebookF, FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaGoogle, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 import { GoogleLogin } from '@react-oauth/google';
-import FacebookLogin from 'react-facebook-login'; // ✅ Normal import (no render-props)
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import './Login.css';
 
 const Login = () => {
@@ -75,20 +74,15 @@ const Login = () => {
   };
 
   // Facebook Login
-  const responseFacebook = async (response) => {
+  const handleFacebookResponse = async (response) => {
     setLoading(true);
     setErrorMsg('');
-    try {
-      if (!response.accessToken) {
-        setErrorMsg("Facebook login failed or cancelled");
-        setLoading(false);
-        return;
-      }
 
+    try {
       const res = await fetch("http://localhost:5000/api/auth/facebook-login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ accessToken: response.accessToken }),
+        body: JSON.stringify({ token: response.accessToken }),
       });
 
       const data = await res.json();
@@ -166,15 +160,21 @@ const Login = () => {
               disabled={loading}
             />
 
-            {/* Facebook Login (normal version) */}
+            {/* Facebook Login */}
             <FacebookLogin
-              appId="user@gmail.com" // 👉 Replace with your real App ID
+              appId="YOUR_FACEBOOK_APP_ID" // ← Replace with your real Facebook App ID
               autoLoad={false}
-              fields="name,email,picture"
-              callback={responseFacebook}
-              cssClass="facebook-btn"
-              icon={<FaFacebookF />}
-              textButton="&nbsp;&nbsp;Login with Facebook"
+              callback={handleFacebookResponse}
+              render={renderProps => (
+                <button
+                  type="button"
+                  className="facebook-login-btn"
+                  onClick={renderProps.onClick}
+                  disabled={loading}
+                >
+                  Login with Facebook
+                </button>
+              )}
             />
           </div>
         </form>
